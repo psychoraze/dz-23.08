@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Adding text</h1>
+    {% with message="I'm doing homework in Django language :) " %}
+        <i><b><p>Before edit</p></b></i>
+        {{ message }}
+        <i></i><b><p>After edit</p></b></i>
+        {{ message|add:"SUIIIIIIIIIIIIIIIIIIII" }}
+    {% endwith %}
+
+    <p>-----------------------------------------------------------</p>
+
+    <h1>If none:</h1>
+    <!-- Тег with -->
+    {% with message=None %}
+        <i><b><p>Before edit</p></b></i>
+        {{ message }}
+        <i><b><p>After edit</p></b></i>
+        {{ message|default_if_none:"No message:/" }}
+    {% endwith %}
+    <!-- Тег endwith -->
+    
+    <!-- Тег if -->
+    {% if homework == 'done' %}
+    <i><u><h1>Homework is done</h1></i></u>
+    <i><u><h2>By using different tags and templates</h2></i></u>
+    {% endif %}
+    <!-- Тег endif -->
+</body>
+</html>
